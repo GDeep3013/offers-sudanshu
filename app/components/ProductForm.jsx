@@ -13,7 +13,15 @@ export function ProductForm({productOptions, selectedVariant}) {
   const navigate = useNavigate();
   const {open} = useAside();
   return (
-    <div className="product-form">
+      <CartProvider
+          onLineAdd={() => {
+              console.log('a line is being added');
+          }}
+          onLineAddComplete={() => {
+              console.log('a line has been added');
+          }}
+      >
+      <div className="product-form">
       {productOptions.map((option) => {
         // If there is only a single value in the option values, don't display the option
         if (option.optionValues.length === 1) return null;
@@ -116,25 +124,17 @@ export function ProductForm({productOptions, selectedVariant}) {
         {selectedVariant?.availableForSale ? 'Add to cart' : 'Sold out'}
       </AddToCartButton>
 
-
-        <CartProvider
-            onLineAdd={() => {
-                console.log('a line is being added');
-            }}
-            onLineAddComplete={() => {
-                console.log('a line has been added');
-            }}
-        >
             <BuyNowButton variantId={selectedVariant.id} >
             <button>Buy Now</button>
             </BuyNowButton>
 
-        </CartProvider>
 
 
 
     </div>
-  );
+</CartProvider>
+
+);
 }
 
 /**
