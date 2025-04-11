@@ -15,6 +15,7 @@ export async function action({ request, context }) {
     // Create a cart if one doesn't exist, or add to existing cart
     const cartId = formData.get('cartId');
     let cart;
+    console.log('cart.card ID', cartId)
 
     if (cartId) {
         // Add to existing cart
@@ -36,6 +37,7 @@ export async function action({ request, context }) {
     }
 
     // Redirect to checkout
+    console.log('cart.cartCreate', cart.cartCreate, cart.cartCreate?.cart)
     if (cart.cartCreate?.cart?.checkoutUrl || cart.cartLinesAdd?.cart?.checkoutUrl) {
         return redirect(cart.cartCreate?.cart?.checkoutUrl || cart.cartLinesAdd?.cart?.checkoutUrl);
     }
