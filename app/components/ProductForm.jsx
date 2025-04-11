@@ -1,6 +1,7 @@
 import {Link, useNavigate} from '@remix-run/react';
 import {AddToCartButton} from './AddToCartButton';
 import {useAside} from './Aside';
+import {BuyNowButton} from '@shopify/hydrogen-react';
 
 /**
  * @param {{
@@ -114,6 +115,8 @@ export function ProductForm({productOptions, selectedVariant}) {
       >
         {selectedVariant?.availableForSale ? 'Add to cart' : 'Sold out'}
       </AddToCartButton>
+
+        <BuyNowButton variantId={selectedVariant.id} />;
     </div>
   );
 }
