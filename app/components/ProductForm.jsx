@@ -129,8 +129,7 @@ export function ProductForm({productOptions, selectedVariant}) {
             <button>Buy Now</button>
             </BuyNowButton>
 
-        </CartProvider>;
-        }
+        </CartProvider>
 
 
 
