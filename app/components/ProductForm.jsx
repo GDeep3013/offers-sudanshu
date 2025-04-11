@@ -192,7 +192,7 @@ export function ProductForm({productOptions, selectedVariant}) {
                     variantId={selectedVariant.id}
                     quantity={1}
                 >
-                    <button className="buy-now-button">Buy Now</button>
+                    <span>Buy Now</span>
                 </BuyNowButton>
             </div>
         </CartProvider>
