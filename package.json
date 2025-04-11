@@ -31,6 +31,7 @@
     "@graphql-codegen/cli": "5.0.2",
     "@remix-run/dev": "^2.16.1",
     "@remix-run/fs-routes": "^2.16.1",
+    "@remix-run/node": "^2.16.5",
     "@remix-run/route-config": "^2.16.1",
     "@shopify/cli": "~3.77.1",
     "@shopify/hydrogen-codegen": "^0.3.3",
